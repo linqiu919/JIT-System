@@ -1,0 +1,51 @@
+server:
+  port: 19001
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/project3?serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 100MB
+  mail:
+    username: linqiu9911@163.com
+    password: WZBYYEJRROYPIMZE
+    host: smtp.163.com
+    default-encoding: utf-8
+
+logging:
+  level:
+    com:
+      java:
+        sm: debug
+file:
+  path: E:\\priject3log
+
+aliyun:
+  endPoint: https://oss-cn-beijing.aliyuncs.com
+  accessKeyId: LTAI5tKVVu8yPJbDBuNdk5bu
+  accessKeySecret: c1A1vBMmtdUBdcSDXMSO0dNOcvww6F
+  bucket: shangmasanshiqi
+  baseUrl: https://shangmasanshiqi.oss-cn-beijing.aliyuncs.com/
+  uploadExt: jpg,png
+  uploadSize: 50
+  imgWidth: 200
+  imgHeight: 200
+# 修改spring自带线程池大小
+  task:
+    execution:
+      pool:
+        core-size: 50
+        max-szie: 50
+
+# 配置redis
+  redis:
+    lettuce:
+      pool:
+        max-active: 30
+        max-idle: 30
+    host: localhost
+    port: 6379
