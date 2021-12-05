@@ -20,6 +20,11 @@ public class MenuQuery extends BaseQuery {
 
     public boolean isQuery(){
         //判断是否是查询
-     return  !(StringUtils.isEmpty(menuTitle) && Objects.isNull(menuType) && Objects.isNull(getStartTime()) && Objects.isNull(getEndTime()));
+     return  !(
+             StringUtils.isEmpty(menuTitle)
+             && Objects.isNull(menuType)
+             && Objects.isNull(getStartTime())
+             && Objects.isNull(getEndTime())
+     );
     }
 }

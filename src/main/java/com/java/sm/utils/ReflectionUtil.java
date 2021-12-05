@@ -8,7 +8,7 @@ import java.lang.reflect.*;
  * @author 722A-08-CXB
  * @version 1.0.0
  * @ClassName ReflectionUtil.java
- * @DescriPtion TODO
+ * @DescriPtion 反射工具类
  * @CreateTime 2021年06月24日 13:09:00
  */
 @Slf4j

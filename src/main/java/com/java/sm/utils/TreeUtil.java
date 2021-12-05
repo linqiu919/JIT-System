@@ -14,14 +14,10 @@ import java.util.stream.Collectors;
  */
 public class TreeUtil {
 
-    //通过集合依次排序找孩子id
-
     /**
-     * 参数一： 最顶级的集合
-     * 参数二：所有数据
      * 目的：从所有的数据中，查出最顶级的孩子，递归查询
-     * @param root
-     * @param allList
+     * @param root 最顶级的集合
+     * @param allList 所有数据
      * @param <T>
      */
     public static <T> void buildTreeData(List<T> root, List<T> allList){
@@ -52,6 +48,5 @@ public class TreeUtil {
             children.forEach(t1->getChildren(t1,allList));
         }
     }
-
 
 }

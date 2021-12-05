@@ -15,6 +15,7 @@ import com.java.sm.service.RoleService;
 import com.java.sm.transfer.MenuTransfer;
 import com.java.sm.utils.TreeUtil;
 import com.java.sm.utils.UploadService;
+import com.wf.captcha.ArithmeticCaptcha;
 import com.wf.captcha.SpecCaptcha;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -81,7 +82,11 @@ public class CommonController {
     @GetMapping("getCode/{uuid}")
     public AxiosResult<String> getCode(@PathVariable String uuid){
         //指定验证码图片宽高
-        SpecCaptcha captcha = new SpecCaptcha(150, 50);
+        ArithmeticCaptcha captcha = new ArithmeticCaptcha(150, 50);
+        // 几位数运算，默认是两位
+        captcha.setLen(2);
+        // 获取运算的公式：3+2=?
+        captcha.getArithmeticString();
         //验证码的值
         String text = captcha.text();
         //将uuid标识和验证码内容放入map集合中
